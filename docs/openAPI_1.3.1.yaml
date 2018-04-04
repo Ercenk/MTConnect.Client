@@ -126,7 +126,7 @@ paths:
     get:
       tags:
         - Assets
-      operationId: Assets
+      operationId: AssetDetails
       summary: Retrieve the available assets
       parameters:
         - $ref: '#/parameters/assetIdParam'

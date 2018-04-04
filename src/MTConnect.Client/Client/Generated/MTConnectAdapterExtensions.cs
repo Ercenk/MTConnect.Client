@@ -214,9 +214,9 @@ namespace MTConnect.Client
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            public static Stream Assets1(this IMTConnectAdapter operations)
+            public static Stream AssetDetails(this IMTConnectAdapter operations)
             {
-                return operations.Assets1Async().GetAwaiter().GetResult();
+                return operations.AssetDetailsAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -228,9 +228,9 @@ namespace MTConnect.Client
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Stream> Assets1Async(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Stream> AssetDetailsAsync(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                var _result = await operations.Assets1WithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
+                var _result = await operations.AssetDetailsWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
                 _result.Request.Dispose();
                 return _result.Body;
             }
