@@ -21,4 +21,14 @@ As I started working on this project during a weekend, I encountered a few thing
 * **MTConnect version**: MTConnect Institute recently released version 1.4, however most of the data out there is using version 1.3.1. The first spec I attempted is for 1.3.1.
 
 ## Bottom Line
-* Two 
+* Swagger spec is there for you to use
+* I generated C# client code from it, and planning to use in another project
+* I had to do some manual work on the generated POCO types
+
+## Some Suggestions to the MTConnect Community
+1. Write the spec for 1.4
+2. Translate XSDs to YAML or JSON equivalents for Swagger specs. 
+
+## Limitations
+
+* Swagger 2.0 does not support matrix type parameters. The protocol specification includes a request for multiple assets by id in the form of "http://example.com/asset/hh1;cc;123;g5". This request type is not implemented in the Swagger spec. A workaround is to request assets one by one.

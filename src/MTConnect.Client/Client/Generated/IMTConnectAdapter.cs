@@ -65,6 +65,26 @@ namespace MTConnect.Client
         /// </summary>
         int? Interval1 { get; set; }
 
+        /// <summary>
+        /// Name of the device
+        /// </summary>
+        string DeviceName { get; set; }
+
+        /// <summary>
+        /// Specifies the MTConnect protocol sequence number.
+        /// </summary>
+        int? At { get; set; }
+
+        /// <summary>
+        /// Asset type
+        /// </summary>
+        string Type { get; set; }
+
+        /// <summary>
+        /// ID of the asset
+        /// </summary>
+        string AssetId { get; set; }
+
 
         /// <summary>
         /// Lists this Agent’s devices and all the devices’ components and data
@@ -82,16 +102,13 @@ namespace MTConnect.Client
         /// Lists this Agents devices and all the devices components and data
         /// items being collected
         /// </summary>
-        /// <param name='deviceName'>
-        /// Name of the device
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<HttpOperationResponse<Stream>> ProbeDeviceWithHttpMessagesAsync(string deviceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse<Stream>> ProbeDeviceWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Retrieve the values for a component.
@@ -107,16 +124,57 @@ namespace MTConnect.Client
         /// <summary>
         /// Retrieve the values for a component
         /// </summary>
-        /// <param name='deviceName'>
-        /// Name of the device
-        /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
         /// <param name='cancellationToken'>
         /// The cancellation token.
         /// </param>
-        Task<HttpOperationResponse<Stream>> DeviceSampleWithHttpMessagesAsync(string deviceName, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+        Task<HttpOperationResponse<Stream>> DeviceSampleWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Retrieve the values for a component
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse<Stream>> CurrentWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Retrieve the values for a component
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse<Stream>> DeviceCurrentWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Retrieve the available assets
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse<Stream>> AssetsWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Retrieve the available assets
+        /// </summary>
+        /// <param name='customHeaders'>
+        /// The headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        Task<HttpOperationResponse<Stream>> Assets1WithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken));
 
     }
 }

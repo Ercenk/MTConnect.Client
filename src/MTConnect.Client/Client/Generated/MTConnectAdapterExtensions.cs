@@ -51,12 +51,9 @@ namespace MTConnect.Client
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='deviceName'>
-            /// Name of the device
-            /// </param>
-            public static Stream ProbeDevice(this IMTConnectAdapter operations, string deviceName)
+            public static Stream ProbeDevice(this IMTConnectAdapter operations)
             {
-                return operations.ProbeDeviceAsync(deviceName).GetAwaiter().GetResult();
+                return operations.ProbeDeviceAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -66,15 +63,12 @@ namespace MTConnect.Client
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='deviceName'>
-            /// Name of the device
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Stream> ProbeDeviceAsync(this IMTConnectAdapter operations, string deviceName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Stream> ProbeDeviceAsync(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                var _result = await operations.ProbeDeviceWithHttpMessagesAsync(deviceName, null, cancellationToken).ConfigureAwait(false);
+                var _result = await operations.ProbeDeviceWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
                 _result.Request.Dispose();
                 return _result.Body;
             }
@@ -112,12 +106,9 @@ namespace MTConnect.Client
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='deviceName'>
-            /// Name of the device
-            /// </param>
-            public static Stream DeviceSample(this IMTConnectAdapter operations, string deviceName)
+            public static Stream DeviceSample(this IMTConnectAdapter operations)
             {
-                return operations.DeviceSampleAsync(deviceName).GetAwaiter().GetResult();
+                return operations.DeviceSampleAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -126,15 +117,120 @@ namespace MTConnect.Client
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='deviceName'>
-            /// Name of the device
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Stream> DeviceSampleAsync(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                var _result = await operations.DeviceSampleWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
+                _result.Request.Dispose();
+                return _result.Body;
+            }
+
+            /// <summary>
+            /// Retrieve the values for a component
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static Stream Current(this IMTConnectAdapter operations)
+            {
+                return operations.CurrentAsync().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieve the values for a component
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<Stream> DeviceSampleAsync(this IMTConnectAdapter operations, string deviceName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<Stream> CurrentAsync(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                var _result = await operations.DeviceSampleWithHttpMessagesAsync(deviceName, null, cancellationToken).ConfigureAwait(false);
+                var _result = await operations.CurrentWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
+                _result.Request.Dispose();
+                return _result.Body;
+            }
+
+            /// <summary>
+            /// Retrieve the values for a component
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static Stream DeviceCurrent(this IMTConnectAdapter operations)
+            {
+                return operations.DeviceCurrentAsync().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieve the values for a component
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Stream> DeviceCurrentAsync(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                var _result = await operations.DeviceCurrentWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
+                _result.Request.Dispose();
+                return _result.Body;
+            }
+
+            /// <summary>
+            /// Retrieve the available assets
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static Stream Assets(this IMTConnectAdapter operations)
+            {
+                return operations.AssetsAsync().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieve the available assets
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Stream> AssetsAsync(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                var _result = await operations.AssetsWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
+                _result.Request.Dispose();
+                return _result.Body;
+            }
+
+            /// <summary>
+            /// Retrieve the available assets
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            public static Stream Assets1(this IMTConnectAdapter operations)
+            {
+                return operations.Assets1Async().GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Retrieve the available assets
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<Stream> Assets1Async(this IMTConnectAdapter operations, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                var _result = await operations.Assets1WithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false);
                 _result.Request.Dispose();
                 return _result.Body;
             }

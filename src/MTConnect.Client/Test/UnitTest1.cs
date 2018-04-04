@@ -16,13 +16,15 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            this.client = new MTConnectClient();
+            this.client = new MTConnectClient("https://smstestbed.nist.gov/vds");
         }
 
         [Test]
         public async Task Test1()
         {
             var result = await this.client.ProbeAsync();
+
+            var result1 = await this.client.CurrentAsync();
             
             Assert.Pass();
         }

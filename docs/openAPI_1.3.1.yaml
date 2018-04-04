@@ -6,7 +6,7 @@ info:
   license:
     name: MIT
 host: smstestbed.nist.gov
-basePath: /vds
+basePath: /vds    
 schemes:
   - https
 produces:
@@ -31,11 +31,7 @@ paths:
       operationId: ProbeDevice
       description: Lists this Agents devices and all the devices components and data items being collected
       parameters:
-        - name: deviceName
-          in: path
-          required: true
-          description: Name of the device
-          type: string
+        - $ref: '#/parameters/deviceNameParam'
       responses:
         '200':
           description: Successful retrieval of the devices and their components
@@ -67,17 +63,79 @@ paths:
       operationId: DeviceSample
       summary: Retrieve the values for a component
       parameters:
-        - name: deviceName
-          in: path
-          required: true
-          description: Name of the device
-          type: string
+        - $ref: '#/parameters/deviceNameParam'
+        - $ref: '#/parameters/pathParam'
+        - $ref: '#/parameters/fromParam'
+        - $ref: '#/parameters/countParam'
+        - $ref: '#/parameters/intervalParam'
+        - $ref: '#/parameters/nextSequenceParam'
       responses:
         '200':
           description: Successful retrieval of the devices and their components
           schema: 
             type: object
             format: file
+  /current:
+    get:
+      tags:
+        - Current
+      operationId: Current
+      summary: Retrieve the values for a component
+      parameters:
+        - $ref: '#/parameters/pathParam'
+        - $ref: '#/parameters/intervalParam'
+        - $ref: '#/parameters/atParam'        
+      responses:
+        '200':
+          description: The most current values for all data items specified in the request path.
+          schema: 
+            type: object
+            format: file    
+  '/{deviceName}/current':
+    get:
+      tags:
+        - Current
+      operationId: DeviceCurrent
+      summary: Retrieve the values for a component
+      parameters:
+        - $ref: '#/parameters/deviceNameParam'
+        - $ref: '#/parameters/pathParam'
+        - $ref: '#/parameters/intervalParam'
+        - $ref: '#/parameters/atParam'        
+      responses:
+        '200':
+          description: The most current values for all data items specified in the request path.
+          schema: 
+            type: object
+            format: file   
+  /assets:
+    get:
+      tags:
+        - Assets
+      operationId: Assets
+      summary: Retrieve the available assets
+      parameters:
+        - $ref: '#/parameters/typeParam'
+      responses:
+        '200':
+          description: All assets on the Agent.
+          schema: 
+            type: object
+            format: file       
+  '/asset/{assetId}':
+    get:
+      tags:
+        - Assets
+      operationId: Assets
+      summary: Retrieve the available assets
+      parameters:
+        - $ref: '#/parameters/assetIdParam'
+      responses:
+        '200':
+          description: Return an asset by id.
+          schema: 
+            type: object
+            format: file                             
 parameters:
   pathParam:
     description: An xpath expression specifying the components and/or data items to include in the sample.
@@ -113,4 +171,28 @@ parameters:
     required: false
     type: integer
     minimum: 0
-  
+  deviceNameParam:
+    name: deviceName
+    in: path
+    required: true
+    description: Name of the device
+    type: string
+  atParam:
+    description: 'Specifies the MTConnect protocol sequence number.'
+    in: query
+    name: at
+    required: false
+    type: integer
+    minimum: 1  
+  typeParam:
+    name: type
+    in: query
+    required: true
+    description: Asset type
+    type: string   
+  assetIdParam:
+    name: assetId
+    in: path
+    required: true
+    description: ID of the asset
+    type: string
