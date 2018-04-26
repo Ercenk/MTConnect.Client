@@ -21,6 +21,13 @@ namespace Client
             this.baseUrl = new Uri(baseUri);
         }
 
+        public MTConnectClient(Uri uri)
+        {
+            this.baseUrl = uri;
+        }
+
+        public Uri Uri => this.baseUrl;
+
         public async Task<MTConnectDevicesType> ProbeAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             var adapterClient = new MTConnectAdapter(this.baseUrl);

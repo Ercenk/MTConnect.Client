@@ -5,7 +5,15 @@
     <PackageId>MTConnect.Client</PackageId>
     <Authors>Ercenk Keresteci</Authors>
     <Product>MTConnect.Client</Product>
-    <Description>An MTConnect client implementation based on the code generated from the swagger spec for MTConect 1.3.1</Description>
+    <Description>An MTConnect client implementation based on the code generated from the swagger spec for MTConect 1.3.1.</Description>
+    <PackageLicenseUrl>https://github.com/Ercenk/MTConnect.Client/blob/master/License.md</PackageLicenseUrl>
+    <Copyright>Copyright (c) 2018, Ercenk Keresteci</Copyright>
+    <PackageProjectUrl>https://github.com/Ercenk/MTConnect.Client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Ercenk/MTConnect.Client</RepositoryUrl>
+    <PackageTags>MTConnect</PackageTags>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Introduced read-only Uri property to the client.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

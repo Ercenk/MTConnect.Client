@@ -1,0 +1,1 @@
+dotnet nuget push "C:\Projects\MTConnect\code\MTConnect.Client\src\MTConnect.Client\Client\bin\Release\MTConnect.Client.1.0.1.nupkg" -s https://api.nuget.org/v3/index.json -k <apiKey>

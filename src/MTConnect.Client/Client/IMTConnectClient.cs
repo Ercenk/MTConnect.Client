@@ -1,10 +1,13 @@
 ﻿namespace Client
 {
+    using System;
     using System.Threading;
     using System.Threading.Tasks;
 
     public interface IMTConnectClient
     {
+        Uri Uri { get; }
+
         Task<MTConnectDevicesType> ProbeAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         Task<MTConnectStreamsType> CurrentAsync(
