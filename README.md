@@ -16,7 +16,11 @@ As I started working on this project during a weekend, I encountered a few thing
 * I generated C# client code from it, and planning to use in another project
 * I had to do some manual work on the generated POCO types
 
-## Limitations
+## Limitations 
 
 * I did not test all of the operations, but a few. I developed this sample only for one thing in my mind, to use it in an [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/how-iot-edge-works) module sample. I only needed to support the Current request, for all of the devices at a given time. If you want to use the implementation for other reasons, please make sure you test the other operations.
 * I did not implement the cases when an MTConnectError is returned in the client I wrote.
+
+
+## Nuget package
+The client is also available at nuget, [https://www.nuget.org/packages/MTConnect.Client/](https://www.nuget.org/packages/MTConnect.Client/)
