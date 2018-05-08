@@ -23,4 +23,15 @@ As I started working on this project during a weekend, I encountered a few thing
 
 
 ## Nuget package
+
 The client is also available at nuget, [https://www.nuget.org/packages/MTConnect.Client/](https://www.nuget.org/packages/MTConnect.Client/)
+
+## How to use
+
+```c#
+    this.client = new MTConnectClient("https://smstestbed.nist.gov/vds");
+
+    var all = await this.client.ProbeAsync();
+
+    var first = await this.client.CurrentAsync(all.Devices.First().id);
+```
