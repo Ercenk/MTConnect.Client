@@ -28,7 +28,7 @@ The client is also available at nuget, [https://www.nuget.org/packages/MTConnect
 
 ## How to use
 
-```c#
+```cs
     this.client = new MTConnectClient("https://smstestbed.nist.gov/vds");
 
     var all = await this.client.ProbeAsync();
