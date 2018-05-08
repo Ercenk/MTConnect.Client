@@ -63,5 +63,15 @@ namespace Tests
 
             Assert.That(first.Streams, Has.One.Items);
         }
+
+        [Test]
+        public async Task CurrentOne()
+        {
+            var all = await this.client.ProbeAsync();
+
+            var first = await this.client.CurrentAsync(all.Devices.First().id);
+
+            Assert.That(first.Streams, Has.One.Items);
+        }
     }
 }

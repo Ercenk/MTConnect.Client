@@ -11,8 +11,8 @@
     <PackageProjectUrl>https://github.com/Ercenk/MTConnect.Client</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Ercenk/MTConnect.Client</RepositoryUrl>
     <PackageTags>MTConnect</PackageTags>
-    <Version>1.0.2</Version>
-    <PackageReleaseNotes>Introduced read-only Uri property to the client.</PackageReleaseNotes>
+    <Version>1.0.5</Version>
+    <PackageReleaseNotes>Fixed a bug on the YAML spec</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

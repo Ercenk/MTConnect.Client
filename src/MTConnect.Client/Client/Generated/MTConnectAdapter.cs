@@ -66,7 +66,7 @@ namespace MTConnect.Client
         /// number + 1) of all the Events, Condition, and Samples considered when
         /// collecting the results.
         /// </summary>
-        public int? Interval1 { get; set; }
+        public int? NextSequence { get; set; }
 
         /// <summary>
         /// Name of the device
@@ -454,9 +454,9 @@ namespace MTConnect.Client
             {
                 throw new ValidationException(ValidationRules.InclusiveMinimum, "Interval", 1);
             }
-            if (Interval < 0)
+            if (NextSequence < 0)
             {
-                throw new ValidationException(ValidationRules.InclusiveMinimum, "Interval", 0);
+                throw new ValidationException(ValidationRules.InclusiveMinimum, "NextSequence", 0);
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -498,13 +498,13 @@ namespace MTConnect.Client
             _httpRequest.Method = new HttpMethod("GET");
             _httpRequest.RequestUri = new System.Uri(_url);
             // Set Headers
-            if (Interval != null)
+            if (NextSequence != null)
             {
-                if (_httpRequest.Headers.Contains("interval"))
+                if (_httpRequest.Headers.Contains("nextSequence"))
                 {
-                    _httpRequest.Headers.Remove("interval");
+                    _httpRequest.Headers.Remove("nextSequence");
                 }
-                _httpRequest.Headers.TryAddWithoutValidation("interval", SafeJsonConvert.SerializeObject(Interval, SerializationSettings).Trim('"'));
+                _httpRequest.Headers.TryAddWithoutValidation("nextSequence", SafeJsonConvert.SerializeObject(NextSequence, SerializationSettings).Trim('"'));
             }
 
 
@@ -616,9 +616,9 @@ namespace MTConnect.Client
             {
                 throw new ValidationException(ValidationRules.InclusiveMinimum, "Interval", 1);
             }
-            if (Interval < 0)
+            if (NextSequence < 0)
             {
-                throw new ValidationException(ValidationRules.InclusiveMinimum, "Interval", 0);
+                throw new ValidationException(ValidationRules.InclusiveMinimum, "NextSequence", 0);
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -661,13 +661,13 @@ namespace MTConnect.Client
             _httpRequest.Method = new HttpMethod("GET");
             _httpRequest.RequestUri = new System.Uri(_url);
             // Set Headers
-            if (Interval != null)
+            if (NextSequence != null)
             {
-                if (_httpRequest.Headers.Contains("interval"))
+                if (_httpRequest.Headers.Contains("nextSequence"))
                 {
-                    _httpRequest.Headers.Remove("interval");
+                    _httpRequest.Headers.Remove("nextSequence");
                 }
-                _httpRequest.Headers.TryAddWithoutValidation("interval", SafeJsonConvert.SerializeObject(Interval, SerializationSettings).Trim('"'));
+                _httpRequest.Headers.TryAddWithoutValidation("nextSequence", SafeJsonConvert.SerializeObject(NextSequence, SerializationSettings).Trim('"'));
             }
 
 

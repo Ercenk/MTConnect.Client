@@ -63,7 +63,7 @@ namespace MTConnect.Client
         /// sequence number + 1) of all the Events, Condition, and Samples
         /// considered when collecting the results.
         /// </summary>
-        int? Interval1 { get; set; }
+        int? NextSequence { get; set; }
 
         /// <summary>
         /// Name of the device

@@ -34,33 +34,52 @@ namespace Client
             return await Run<MTConnectDevicesType>(adapterClient.ProbeAsync, cancellationToken);
         }
 
-        public async Task<MTConnectStreamsType> CurrentAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<MTConnectDevicesType> ProbeAsync(string deciceId, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var adapterClient = new MTConnectAdapter(this.baseUrl);
-            return await Run<MTConnectStreamsType>(adapterClient.CurrentAsync, cancellationToken);
-        }
+            var adapterClient = new MTConnectAdapter(this.baseUrl) {DeviceName = deciceId};
 
-        public async Task<MTConnectStreamsType> SampleAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var adapterClient = new MTConnectAdapter(this.baseUrl);
-            return await Run<MTConnectStreamsType>(adapterClient.SampleAsync, cancellationToken);
-        }
-
-        public async Task<MTConnectDevicesType> ProbeAsync(string deviceId, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var adapterClient = new MTConnectAdapter(this.baseUrl) { DeviceName = deviceId };
             return await Run<MTConnectDevicesType>(adapterClient.ProbeDeviceAsync, cancellationToken);
         }
 
-        public async Task<MTConnectStreamsType> SampleAsync(string deviceId, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<MTConnectStreamsType> CurrentAsync(string deviceId = "", string path = "", int? interval = null, int? at = null,
+            CancellationToken cancellationToken = default(CancellationToken))
         {
-            var adapterClient = new MTConnectAdapter(this.baseUrl) { DeviceName = deviceId };
+            var adapterClient = new MTConnectAdapter(this.baseUrl)
+            {
+                DeviceName = deviceId == string.Empty ? null : deviceId,
+                Path = path == string.Empty ? null : path,
+                Interval = interval,
+                At = at
+            };
+
+            if (deviceId == string.Empty)
+            {
+                return await Run<MTConnectStreamsType>(adapterClient.CurrentAsync, cancellationToken);
+            }
+            return await Run<MTConnectStreamsType>(adapterClient.DeviceCurrentAsync, cancellationToken);
+        }
+
+        public async Task<MTConnectStreamsType> SampleAsync(string deviceId = "", string path = "", int? @from = null, int? count = null, int? interval = null,
+            int? nextSequence = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var adapterClient = new MTConnectAdapter(this.baseUrl)
+            {
+                DeviceName = deviceId == string.Empty ? null : deviceId,
+                Path = path == string.Empty ? null : path,
+                FromProperty = @from,
+                Count = count,
+                Interval = interval,
+                NextSequence = nextSequence
+            };
+
+            if (deviceId == string.Empty)
+            {
+                return await Run<MTConnectStreamsType>(adapterClient.SampleAsync, cancellationToken);
+            }
             return await Run<MTConnectStreamsType>(adapterClient.DeviceSampleAsync, cancellationToken);
         }
 
-        private static T DeserializeResults<T>(Stream resultStream)
+       private static T DeserializeResults<T>(Stream resultStream)
         {
             T result;
             using (var reader = XmlReader.Create(resultStream))
@@ -72,7 +91,7 @@ namespace Client
             return result;
         }
 
-        private async static Task<T> Run<T>(Func<CancellationToken, Task<Stream>> operation, CancellationToken token)
+        private static async Task<T> Run<T>(Func<CancellationToken, Task<Stream>> operation, CancellationToken token)
         {
             var resultStream = await operation(token);
 
