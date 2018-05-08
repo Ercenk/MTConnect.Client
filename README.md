@@ -1,5 +1,5 @@
 # MTConnect.Client
-THis is a .NET Core library using the generated code from the OpenAPI 2.0 (Swagger) sample spec for the MTConect 1.3.1 defined at the repo https://github.com/Ercenk/MTConnect.OpenAPI.
+This is a .NET Core library using the generated code from the OpenAPI 2.0 (Swagger) sample spec for the MTConnect 1.3.1 defined at the repo https://github.com/Ercenk/MTConnect.OpenAPI.
 
 ## Story
 
