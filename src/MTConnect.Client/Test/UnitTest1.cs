@@ -73,5 +73,14 @@ namespace Tests
 
             Assert.That(first.Streams, Has.One.Items);
         }
+
+        [Test]
+        public async Task CanDeserializeComponentStreams()
+        {
+            var allSamples = await this.client.SampleAsync();
+            var anySamples = allSamples.Streams.Where(s => s.ComponentStream.Any(cs => cs.Samples != null && cs.Samples.Any()));
+
+            Assert.That(anySamples.Count(), Is.GreaterThan(0));
+        }
     }
 }

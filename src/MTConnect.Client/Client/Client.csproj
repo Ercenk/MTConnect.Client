@@ -11,8 +11,8 @@
     <PackageProjectUrl>https://github.com/Ercenk/MTConnect.Client</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Ercenk/MTConnect.Client</RepositoryUrl>
     <PackageTags>MTConnect</PackageTags>
-    <Version>1.0.5</Version>
-    <PackageReleaseNotes>Fixed a bug on the YAML spec</PackageReleaseNotes>
+    <Version>1.0.6</Version>
+    <PackageReleaseNotes>Fixed a bug in deserizalization of Samples property of ComponentStreamsType</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

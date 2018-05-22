@@ -20,6 +20,7 @@ As I started working on this project during a weekend, I encountered a few thing
 
 * I did not test all of the operations, but a few.
 * I did not implement the cases when an MTConnectError is returned.
+* **VERY IMPORTANT:** xsd.exe may not generate the right code for the element types marked with substitutionGroup, because the way XSD is mapped to C#. One workaround I found was to modify the generated code at the generated property for the collection containing the polymorphic type. One example is _Samples_ on the _ComponentStreamType_ type. Please see MTConnectStreams_1_3_1_0.cs lines 831-910 for the fix. I strongly urge you to apply the same fix to any other collection that you cannot get the results for.   
 
 
 ## Nuget package
