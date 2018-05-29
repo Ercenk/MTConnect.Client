@@ -829,7 +829,7 @@ public partial class ComponentStreamType {
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("Sample", IsNullable=false)]
     // Fix for substitutionGroup in the XSD and xsd.exe conversion
-    // IMPORTANT: Please make sure to apply this fix if you see any other collection not syccessgfully being deserialized
+    // IMPORTANT: Please make sure to apply this fix if you see any other collection not successfully being deserialized
     [System.Xml.Serialization.XmlArrayItemAttribute("AbsTimeSeries", typeof(AbsTimeSeriesType))]
     [System.Xml.Serialization.XmlArrayItemAttribute("TimeSeries", typeof(TimeSeriesType))]
     [System.Xml.Serialization.XmlArrayItemAttribute("AbsTimeSeriesTimeSeries", typeof(AbsTimeSeriesTimeSeriesType))]
@@ -919,6 +919,65 @@ public partial class ComponentStreamType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("Event", IsNullable=false)]
+    // Fix for substitutionGroup in the XSD and xsd.exe conversion
+    // IMPORTANT: Please make sure to apply this fix if you see any other collection not successfully being deserialized
+    [System.Xml.Serialization.XmlArrayItemAttribute("InterfaceEvent", typeof(InterfaceEventType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Code", typeof(CodeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Block", typeof(BlockType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Line", typeof(LineType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PowerStatus", typeof(PowerStatusType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PowerState", typeof(PowerStateType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PartCount", typeof(PartCountType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Direction", typeof(DirectionType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Program", typeof(ProgramType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Execution", typeof(ExecutionType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ControllerMode", typeof(ControllerModeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ToolId", typeof(ToolIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ToolNumber", typeof(ToolNumberType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ToolAssetId", typeof(ToolAssetIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PartId", typeof(PartIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("DoorState", typeof(DoorStateType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("RotaryMode", typeof(RotaryModeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ActiveAxes", typeof(ActiveAxesType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("CoupledAxes", typeof(CoupledAxesType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AxesCoupling", typeof(AxesCouplingType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Message", typeof(MessageType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("EmergencyStop", typeof(EmergencyStopType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Availability", typeof(AvailabilityType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ActuatorState", typeof(ActuatorStateType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PathMode", typeof(PathModeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AssetChanged", typeof(AssetChangedType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AssetRemoved", typeof(AssetRemovedType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("WorkholdingId", typeof(WorkholdingIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ChuckState", typeof(ChuckStateType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("EndOfBar", typeof(EndOfBarType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AxisInterlock", typeof(AxisInterlockType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ChuckInterlock", typeof(ChuckInterlockType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AxisState", typeof(AxisStateType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PathFeedrateOverride", typeof(PathFeedrateOverrideType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("AxisFeedrateOverride", typeof(AxisFeedrateOverrideType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("RotaryVelocityOverride", typeof(RotaryVelocityOverrideType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PartAssetId", typeof(PartAssetIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("FunctionalMode", typeof(FunctionalModeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PalletId", typeof(PalletIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ProgramComment", typeof(ProgramCommentType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ProgramHeader", typeof(ProgramHeaderType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("OperatorId", typeof(OperatorIdType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ProgramEdit", typeof(ProgramEditType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("ProgramEditName", typeof(ProgramEditNameType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("Alarm", typeof(AlarmType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("MaterialFeed", typeof(MaterialFeedType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("MaterialChange", typeof(MaterialChangeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("MaterialRetract", typeof(MaterialRetractType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("PartChange", typeof(PartChangeType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("MaterialLoad", typeof(MaterialLoadType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("MaterialUnload", typeof(MaterialUnloadType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("OpenDoor", typeof(OpenDoorType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("CloseDoor", typeof(CloseDoorType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("OpenChuck", typeof(OpenChuckType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("CloseChuck", typeof(CloseChuckType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("InterfaceState", typeof(InterfaceStateType))]
+
     public EventType[] Events {
         get {
             return this.eventsField;
@@ -930,6 +989,12 @@ public partial class ComponentStreamType {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlArrayItemAttribute("Condition", IsNullable=false)]
+    // Fix for substitutionGroup in the XSD and xsd.exe conversion
+    // IMPORTANT: Please make sure to apply this fix if you see any other collection not successfully being deserialized
+    [System.Xml.Serialization.XmlArrayItemAttribute("UnavailableType", typeof(UnavailableType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("NormalType", typeof(NormalType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("WarningType", typeof(WarningType))]
+    [System.Xml.Serialization.XmlArrayItemAttribute("FaultType", typeof(FaultType))]
     public ConditionType[] Condition {
         get {
             return this.conditionField;
